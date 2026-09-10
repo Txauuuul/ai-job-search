@@ -57,7 +57,10 @@ Descartar puestos **presenciales o híbridos** fuera de esas 5 zonas.
 InfoJobs, Tecnoempleo, LinkedIn Jobs, Indeed, Empleo.navarra.es, InfoempleoAragón,
 Lanbide (País Vasco), Trabajastur (Asturias), EmpleoCantabria, y búsqueda web general.
 
+_Nota: la rutina en la nube solo puede llegar a estos vía WebSearch (el resto está
+bloqueado por red). En sesión, con navegador, sí se accede a todos._
+
 ## Deduplicación
 
 Antes de reportar una oferta, comprobar que NO está ya en `job_search_tracker.csv`
-(por empresa + puesto, o por URL). Solo reportar ofertas nuevas.
+(por empresa + puesto, o por URL) ni en un `informes/*.md` anterior. Solo lo nuevo.
