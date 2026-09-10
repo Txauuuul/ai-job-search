@@ -26,12 +26,12 @@ Make, Zapier), QA / tester junior, soporte técnico / helpdesk con recorrido a d
 
 ## Zona (orden de prioridad — barrer en este orden)
 
-0. **Tauste y Cinco Villas** (Ejea de los Caballeros, Tarazona, Gallur...) — es donde vive; cualquier oferta aquí es prioritaria.
-1. Pamplona y comarca (Barañáin, Burlada, Zizur Mayor, Berriozar, Villava, Huarte, Noáin, Imárcoain)
-2. Zaragoza (ciudad y provincia)
-3. País Vasco
-4. Asturias  ← **siempre lo último**
-5. Cantabria ← **siempre lo último**
+1. **Pamplona y comarca** (Barañáin, Burlada, Zizur Mayor, Berriozar, Villava, Huarte, Noáin, Imárcoain)
+2. **Tauste y Cinco Villas** (Ejea de los Caballeros, Tarazona, Gallur...) — donde vive
+3. **Zaragoza** (ciudad y provincia)
+4. **País Vasco**
+5. **Asturias**  ← siempre lo último
+6. **Cantabria** ← siempre lo último
 
 **Excepción:** si el puesto es **100% remoto**, la ubicación de la empresa da igual
 (España o extranjero) — incluir siempre.
