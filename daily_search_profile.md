@@ -66,11 +66,16 @@ nota de que es su deal-breaker. No prepararle CV/carta salvo que él lo pida.
 
 ## Portales a revisar
 
-InfoJobs, Tecnoempleo, LinkedIn Jobs, Indeed, Empleo.navarra.es, InfoempleoAragón,
-Lanbide (País Vasco), Trabajastur (Asturias), EmpleoCantabria, y búsqueda web general.
+**Cada búsqueda diaria debe cubrir al menos 4–5 portales distintos**, no solo InfoJobs:
+1. **InfoJobs** (listados por zona + categoría)
+2. **Tecnoempleo** (bueno para 100% remoto; ojo: sus páginas regionales repiten el pool nacional)
+3. **LinkedIn Jobs** (linkedin.com/jobs — filtrar por fecha "últimas 24h" y ubicación)
+4. **Indeed** (es.indeed.com)
+5. Uno rotativo entre: **InfoJobs "primer empleo"**, **Empleo.navarra.es**, **Lanbide**
+   (País Vasco), **Trabajastur** (Asturias), **EmpleoCantabria**, portales de empresas concretas.
 
-_Nota: la rutina en la nube solo puede llegar a estos vía WebSearch (el resto está
-bloqueado por red). En sesión, con navegador, sí se accede a todos._
+Si un portal bloquea el acceso (HTTP 456 de InfoJobs por rate limit), espaciar las peticiones
+o usar el navegador (Claude in Chrome), y dejar constancia en el informe de qué quedó sin barrer.
 
 ## Deduplicación
 
