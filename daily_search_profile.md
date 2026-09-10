@@ -1,7 +1,7 @@
 # Perfil de búsqueda diaria — Saúl Vicente Pola
 
-_Este archivo lo lee el agente programado (rutina en la nube) cada mañana laborable.
-Editar aquí para cambiar los criterios sin tocar la rutina._
+_Criterios de la búsqueda diaria (se hace en sesión, ver `daily_search_routine.md`).
+Editar aquí para cambiarlos._
 
 ## Candidato (resumen)
 
@@ -37,17 +37,29 @@ Make, Zapier), QA / tester junior, soporte técnico / helpdesk con recorrido a d
 
 Descartar puestos **presenciales o híbridos** fuera de esas 5 zonas.
 
+## Experiencia exigida (regla actualizada 10/09)
+
+- **0 años / recién titulado / "sin experiencia":** mostrar normal.
+- **Hasta 1 año exigido:** mostrar — Saúl quiere probar suerte. Nota: "piden 1 año".
+- **2 años:** mostrar como **"tiro largo"** con la nota del gap.
+- **Más de 2 años, "senior", "3+ años":** descartar (listar en la tabla de descartadas con el motivo).
+
 ## Filtros duros (descartar automáticamente)
 
-- Exigen **más de 2 años** de experiencia (o "senior", "5+ años", etc.).
-- **Jornada partida** explícita (necesita horario continuo).
 - Exigen **inglés C1 acreditado** u obligatorio de nivel alto.
 - Salario **neto por debajo de ~1400 €/mes** sin perspectiva de crecimiento.
 - Stack propietario de nicho que requiere experiencia previa concreta imposible de cubrir.
+- Presencial o híbrido **fuera de las 5 zonas** (y no 100% remoto).
+
+## Jornada partida — MOSTRAR, no descartar
+
+Saúl NO quiere jornada partida, pero quiere ver igualmente estas ofertas. Mostrarlas en una
+sección aparte ("Jornada partida — probablemente no, pero las ves") con el horario y una
+nota de que es su deal-breaker. No prepararle CV/carta salvo que él lo pida.
 
 ## Marcar como "tiro largo" (NO descartar, solo avisar con nota)
 
-- "Junior" que en el cuerpo pide realmente 2+ años.
+- Piden 2 años de experiencia.
 - Piden titulación concreta que Saúl no tiene exactamente pero es defendible
   (p. ej. "Grado en Informática/Matemáticas" — Economía cuantitativa + DAW es defendible).
 - Stack que Saúl no domina pero es aprendible desde su base (C#/.NET desde Java POO, etc.).
