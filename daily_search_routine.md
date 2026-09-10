@@ -1,32 +1,28 @@
-# Rutina "Búsqueda de empleo diaria — Saúl" (modo RADAR)
+# Búsqueda de empleo diaria — cómo funciona
 
-- **trigger_id:** `trig_01KUQ7691YXkjYJjiCYY1nnC`
-- **Panel:** https://claude.ai/code/routines/trig_01KUQ7691YXkjYJjiCYY1nnC
-- **Horario:** cron `0 7 * * 1-5` = L-V 09:00 Europe/Madrid (CEST). Tras DST de finales de octubre pasar a `0 8 * * 1-5`.
-- **Entrega:** `informes/AAAA-MM-DD.md` (commit+push a master) **y** email a saultauste22@gmail.com (conector Gmail).
+**Enfoque actual (10/09/2026): en sesión, al empezar el día.**
 
-## Por qué "modo radar"
+La rutina en la nube (`trig_01KUQ7691YXkjYJjiCYY1nnC`) quedó **DESACTIVADA**: el entorno
+de la nube egress-bloquea los portales, así que solo daba ofertas caducadas del índice de
+búsqueda. Sin valor.
 
-El entorno en la nube (`env_01NET3rd8du3jXZw4o2dYuan`, anthropic_cloud) tiene el **egress
-bloqueado** para InfoJobs, Tecnoempleo, LinkedIn, Indeed, Lanbide, etc. WebFetch a esos
-dominios falla (EGRESS_BLOCKED). Solo **WebSearch** funciona. Por eso la rutina no analiza
-ofertas: junta **enlaces candidatos** de los resultados de búsqueda y los manda para que
-Saúl los abra y evalúe. El análisis fino (fit, CV, carta) se sigue haciendo en sesión.
+En cambio: un **hook SessionStart** (`.claude/hooks/daily-search-check.sh`) comprueba si
+existe `informes/AAAA-MM-DD.md` de hoy. Si no existe, inyecta a Claude la instrucción de
+hacer la búsqueda **en vivo** antes de nada:
 
-## Deduplicación
+1. Leer `daily_search_profile.md` + `job_search_tracker.csv`.
+2. `WebFetch` sobre páginas de **LISTADO** (no de oferta individual) de InfoJobs y
+   Tecnoempleo, por zona: Pamplona/Navarra → Zaragoza → Bilbao/Bizkaia → Asturias →
+   Cantabria, + remoto. Ordenar por fecha; quedarse con lo de las últimas ~48 h.
+   - `WebFetch` a los listados **funciona** desde la máquina local (probado 10/09).
+   - Las páginas de oferta individual a veces devuelven HTTP 456 (bot): entonces marcar
+     "sin verificar" pero conservar si el listado la daba reciente.
+3. Filtrar con los filtros duros + dedup contra tracker e `informes/*.md` previos.
+4. Presentar SOLO las ofertas reales a las que Saúl puede optar, con análisis de encaje.
+5. Guardar `informes/AAAA-MM-DD.md`. Ofrecer actualizar el tracker.
 
-- `job_search_tracker.csv` (empresa + URL).
-- Todos los `informes/*.md` anteriores (enlaces ya reportados) — para no repetir.
+**Requisito:** el PC encendido y Claude Code abierto (que es cuando hablamos). Si el hook
+no salta tras editar settings, abrir `/hooks` una vez o reiniciar.
 
-## Mantenimiento
-
-- Cambiar criterios: editar `daily_search_profile.md` + push.
-- Cambiar prompt/horario: `RemoteTrigger update` sobre el trigger_id.
-- Si algún día se levanta el bloqueo de egress: volver al prompt "analítico" (git history).
-
-## Prompt activo
-
-Ver el `events[0].data.message.content` del trigger (RemoteTrigger get). Resumen: WebSearch
-en batería (zona x rol), filtra a URLs de oferta individual (`/of-i`, `/rf-`, `/jobs/view/`),
-dedup contra tracker + informes previos, escribe informe agrupado por zona con aviso de
-"sin verificar", commit + push + email.
+**Reactivar la nube** solo si algún día se levanta el bloqueo de egress (ver git history
+para el prompt "radar").
